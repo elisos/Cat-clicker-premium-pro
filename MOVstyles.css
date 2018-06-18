@@ -1,0 +1,134 @@
+/*-----------------------*/
+/*BASIC SETUP*/
+/*-----------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #8cd9e0;
+    color: #4a4a4a;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+img, embed, object, video {
+    max-width: 100%
+}
+
+/*-----------------------*/
+/*REUSABLE COMPONENTS*/
+/*-----------------------*/
+
+
+/*---------HEADER SECTION----------*/
+
+h1 {
+    margin: 30px auto;
+    color: #d68c01;
+}
+
+h3 {
+    margin: 0 auto 15px;
+}
+
+/*--------NAV---------*/
+#wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; 
+    margin: 0;
+    background-color: #b7eaef;
+    padding: 20px 0 20px 20px;
+}
+
+#catNav {
+    list-style: none;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+#catNav li {
+    font-size: 30px;
+    font-weight: 300;
+    color: #885900;
+    padding: 10px 10px;
+    margin:0;
+    cursor: pointer;
+    border: transparent;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+/*    text-align: right;*/
+}
+
+#catNav li:hover {
+    color: #007681;
+}
+
+#catNav li.active {
+    background-color: #8cd9e0;
+    color: #d68c01;
+}
+
+/*---------MAIN SECTION------------*/
+
+main {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#catDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#catDiv p {
+    color: #885900;
+    font-weight: 500;
+    margin: 30px auto;
+}
+
+#catImg {
+    margin: 20px auto;
+    cursor: pointer;
+    width: 256px;
+    height: auto;
+}
+
+/*
+#counter {
+    display: inline-block;
+    width: 50px;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #4a4a4a;
+    border-radius: 15px;
+    text-align: center;
+}
+*/
+
+
+/*---------FOOTER SECTION----------*/
+
+footer {
+    font-size: 12px;
+}
