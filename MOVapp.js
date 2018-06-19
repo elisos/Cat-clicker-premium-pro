@@ -1,20 +1,4 @@
 /*-----Model------*/
-//class Cat {
-//    constructor (name, imgSrc, clickCount = 0) {
-//        this.name = name;
-//        this.imgSrc = imgSrc;
-//        this.clickCount = 0;
-//    }
-//}
-//
-//let biscuit = new Cat('Biscuit', "biscuit.png");
-//let ginger = new Cat('Ginger', "ginger.png");
-//let snowy = new Cat('Snowy', "snowy.png");
-//let goblin = new Cat('Goblin', "goblin.png");
-//let mitzi = new Cat('Mitzi', "mitzi.png");
-//let gingko = new Cat('Gingko', "gingko.png");
-//
-//const catArray = [biscuit, ginger, snowy, goblin, mitzi, gingko];
 
 let model = {
     currentCat: null,
@@ -40,12 +24,19 @@ let model = {
     ]
 };
 
+let adminModel = {
+    adminName: null,
+    adminImgSrc: null,
+    adminClickCount: null   
+}
+
 /*-----Octopus-----*/
 let octopus = {
     init: function () {
         model.currentCat = model.cats[0];
         navView.init();
         catView.init();
+        adminView.init();
     },
     
     getCurrentCat: function () {
@@ -63,6 +54,18 @@ let octopus = {
     incrementCounter: function () {
         model.currentCat.clickCount++;
         catView.render();
+    },
+    
+    getNewName: function () {
+        adminView.reName();
+    },
+    
+    getNewPic: function () {
+        adminView.newPic();
+    },
+    
+    getNewCount: function () {
+        adminView.newCount();
     }
 }
 
@@ -133,6 +136,67 @@ let catView = {
         this.counter.textContent = currentCat.clickCount;
         this.CatName.textContent = currentCat.name;
         this.catImg.src = currentCat.imgSrc;
+    }
+}
+
+let adminView = {
+    init: function () {
+        const adminButton = document.getElementById('adminButton');
+        const adminForm = document.getElementById("adminForm");
+        const cancelButton = document.getElementById('cancelButton');
+        const ok = document.getElementById('okButton');
+        
+        adminButton.addEventListener('click', function(){
+            adminForm.style.display = "block";
+        });
+        
+        cancelButton.addEventListener('click', function(){
+            adminForm.style.display = "none";
+        });
+        
+        ok.addEventListener('click', this.renderNewInfo);
+    },
+    
+    reName: function() {
+        this.adminName= document.getElementById('adminName').value;
+        return adminName;
+    },
+    
+    newPic: function() {
+        this.adminPic = document.getElementById('adminImgSrc').value;
+        return adminPic;
+    },
+    
+    newCount: function() {
+        this.adminCount = document.getElementById('adminClickCount').value;
+        return adminCount;
+    },
+    
+    renderNewInfo: function () {
+        let ok = document.getElementById('okButton');
+        const CatName = document.getElementById('catName');
+        const catImg = document.getElementById('catImg');
+        const counter = document.getElementById('counter');
+        this.adminName= document.getElementById('adminName');
+        this.adminPic = document.getElementById('adminImgSrc');
+        this.adminCount = document.getElementById('adminClickCount');
+        
+        ok.addEventListener('click', function () {
+            if(this.adminCount.value){
+                counter.textContent = this.adminCount.value;
+            }
+            if(this.adminName.value){
+                CatName.textContent = this.adminName.value;
+            }
+            if(this.adminPic.value){
+                catImg.src = this.adminPic.value;
+            }
+            
+            adminForm.style.display = "none";
+            this.adminCount.value = "";
+            this.adminName.value = "";
+            this.adminPic.value = "";
+        });
     }
 }
 

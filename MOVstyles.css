@@ -124,7 +124,35 @@ main {
     border-radius: 15px;
     text-align: center;
 }
-*/
+
+/*-----ADMIN SECTION-----*/
+#proDiv {
+    margin-right: 100px;
+}
+
+#adminButton {
+    margin: 20px;
+    padding: 8px 5px;
+}
+
+input {
+    margin-left: 15px;
+}
+
+#adminForm {
+    background-color: #b7eaef;
+    padding: 20px;
+    text-align: left;
+    font-weight: 400;
+    display: none;
+}
+
+#adminForm p {
+    display: block;
+    margin: 20px auto;
+}
+
+
 
 
 /*---------FOOTER SECTION----------*/
