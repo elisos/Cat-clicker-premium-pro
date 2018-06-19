@@ -96,26 +96,13 @@ let navView = {
                 return function() {
                     octopus.setCurrentCat(catCopy);
                     catView.render();
+                    tab.classList.add('active');
                 };
             })(cat));
             
             this.catNav.appendChild(tab);
         }
-     },
-    
-        
-//   highlight: function () {
-//        this.catNav = document.getElementById('catNav');
-//        let navTabs = this.catNav.querySelectorAll('li');
-//        let tabArray = [...navTabs];
-//    
-//        this.catNav.addEventListener('click', function (e) {
-//            for (tab of tabArray) {
-//                tab.classList.remove('active');
-//                e.target.classList.add('active'); 
-//            }
-//        }
-//    }
+     }
 }
     
 let catView = {
@@ -199,5 +186,19 @@ let adminView = {
         });
     }
 }
+
+let highlight = function () {
+        const catNav = document.getElementById('catNav');
+        let navTabs = catNav.querySelectorAll('li');
+        let tabArray = [...navTabs];
+    
+        catNav.addEventListener('click', function (e) {
+            for (tab of tabArray) {
+                tab.classList.remove('active');
+                e.target.classList.add('active'); 
+            }
+        });
+    }
+highlight();
 
 octopus.init();

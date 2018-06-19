@@ -132,7 +132,6 @@ main {
 
 #adminButton {
     margin: 20px;
-    padding: 8px 5px;
 }
 
 input {
@@ -152,7 +151,18 @@ input {
     margin: 20px auto;
 }
 
+#buttonDiv {
+    margin: 0 auto;
+    text-align: center;
+}
 
+.button {
+    padding: 8px 5px;
+}
+
+#cancelButton {
+    margin-left: 20px;
+}
 
 
 /*---------FOOTER SECTION----------*/
